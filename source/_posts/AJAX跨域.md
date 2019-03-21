@@ -1,9 +1,9 @@
 ---
 title: AJAX跨域
 date: 2019-03-17 17:22:25
-categories:
+categories: javascript
 tags:
-description:
+description: 从刚接触前端开发起，跨域这个词就一直以很高的频率在身边重复出现，一直到现在，已经调试过N个跨域相关的问题了，16年时也整理过一篇相关文章，但是感觉还是差了点什么，于是现在重新梳理了一下。
 ---
 [ajax跨域，这应该是最全的解决方案了](https://segmentfault.com/a/1190000012469713#articleHeader12)
 
