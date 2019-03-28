@@ -13,7 +13,7 @@ date: 2019-03-25 21:51:49
 [凹凸实验室](https://aotu.io)
 [印记中文前端导航](https://docschina.org/)
 [Awesomes-Web前端开发资源库](https://www.awesomes.cn/)
-[r人人都是产品经理](http://www.woshipm.com/)
+[人人都是产品经理](http://www.woshipm.com/)
 
 ### 工具集合
 [Web 开发技术](https://developer.mozilla.org/zh-CN/)
