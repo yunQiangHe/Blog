@@ -8,6 +8,7 @@ date: 2019-03-25 21:51:49
 [TypeScript](https://www.tslang.cn/)
 [复制到剪切板clipboardjs](https://clipboardjs.com/)
 [改进的离线存储localforage](https://localforage.docschina.org/)
+[前端轻量级web进度条 – Nprogress](http://ricostacruz.com/nprogress/)
 
 ### 前端资讯
 [凹凸实验室](https://aotu.io)
