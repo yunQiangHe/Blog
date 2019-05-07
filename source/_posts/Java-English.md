@@ -18,3 +18,12 @@ description: 常用的单词
 10. Encapsulation 封装
 11. Inheritance 继承
 12. Polymorphism 多态
+
+```
+Java 语言目前定义了 51 个关键字，这些关键字不能作为变量名、类名和方法名来使用。以下对这些关键字进行了分类。
+    数据类型：boolean、int、long、short、byte、float、double、char、class、interface。
+    流程控制：if、else、do、while、for、switch、case、default、break、continue、return、try、catch、finally。
+    修饰符：public、protected、private、final、void、static、strict、abstract、transient、synchronized、volatile、native。
+    动作：package、import、throw、throws、extends、implements、this、supper、instanceof、new。
+    保留字：true、false、null、goto、const。
+```
