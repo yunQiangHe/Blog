@@ -3,7 +3,7 @@ title: Java English
 date: 2019-05-06 22:51:58
 categories: java
 tags:
-description: 常用的单词
+description: 常用的单词  编程的本质，就是对内存中的数据的访问和修改。
 ---
 
 1. compile 编译
@@ -31,3 +31,7 @@ Java 语言目前定义了 51 个关键字，这些关键字不能作为变量�
 13. Structured Analysis SA 结构化分析
 14. Structured Design SD 结构化设计
 15. Structured Program SP 结构化设计
+16. Strongly Typed 强类型
+17. Primitive Type 基本数据类型
+18. Reference Type 引用类型
+19. 
