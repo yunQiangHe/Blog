@@ -34,4 +34,6 @@ Java 语言目前定义了 51 个关键字，这些关键字不能作为变量�
 16. Strongly Typed 强类型
 17. Primitive Type 基本数据类型
 18. Reference Type 引用类型
-19. 
+19. 堆heap内存
+20. 栈stack内存
+21. 
