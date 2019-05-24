@@ -27,7 +27,21 @@ Java 语言目前定义了 51 个关键字，这些关键字不能作为变量�
     动作：package、import、throw、throws、extends、implements、this、supper、instanceof、new。
     保留字：true、false、null、goto、const。
 ```
-
+```
+活动图           activity diagram
+类图             class diagram
+通信图           communication diagram
+组件图           componet diagram
+复合结构图        composite structure diagram
+部署图           deployment diagram
+交互概观图        interactive overview diagram
+对象图           object diagram
+包图             package diagram
+顺序图           sequence diagram
+状态机图         state machine diagram
+定时图           timing diagram
+用例图           use case diagram
+```
 13. Structured Analysis SA 结构化分析
 14. Structured Design SD 结构化设计
 15. Structured Program SP 结构化设计
