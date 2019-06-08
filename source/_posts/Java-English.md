@@ -6,7 +6,7 @@ tags:
 description: 常用的单词  编程的本质，就是对内存中的数据的访问和修改。
 ---
 
-1. compile 编译
+1. compile 编译  javac
 2. JVM Java Virtual Machine  Java虚拟机
 3. JDK 全称 Java SE Development Kit  Java标准开发包
 4. JRE 全称 Java Runtime Environment  Java运行环境
@@ -50,4 +50,7 @@ Java 语言目前定义了 51 个关键字，这些关键字不能作为变量�
 18. Reference Type 引用类型
 19. 堆heap内存
 20. 栈stack内存
-21. 
+21. Binary 二进制
+22. bit 位
+23. variable 变量
+24. syntax   [ˈsɪntæks] 句法;句法规则;语构
