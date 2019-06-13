@@ -54,3 +54,7 @@ Java 语言目前定义了 51 个关键字，这些关键字不能作为变量�
 22. bit 位
 23. variable 变量
 24. syntax   [ˈsɪntæks] 句法;句法规则;语构
+25. init_statement 初始化语句
+26. test_experession 循环条件
+27. body_statement 循环体
+28. interation_statement 迭代语句
