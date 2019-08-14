@@ -3,7 +3,7 @@ title: vue后台
 date: 2019-08-14 14:14:05
 categories: Vue
 tags:
-description:
+description: Vue有著名的全家桶系列（1.项目构建工具、2.路由、3.状态管理、4.http请求工具。）Vue两大核心思想：组件化和数据驱动。组件化：把整体拆分为各个可以复用的个体，数据驱动：通过数据变化直接影响bom展示，避免dom操作。
 ---
 
 ## 1.登录权限
