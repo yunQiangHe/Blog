@@ -25,3 +25,20 @@ description: Vue有著名的全家桶系列（1.项目构建工具、2.路由、
 -- 页面权限
 -- 模块权限-页面区块（组件）是否显示
 -- 元件权限-组件内元素是否显示
+
+## 2.eslint报错的解决
+2.1 Newline required at end of file but not found 
+文件末尾需要换行符，但找不到；
+2.2 使用 vue-cli 构建的项目，模版是 webpack ，默认的 eslint 配置是以 standard 为基础的，要求是不使用分号。
+Visual Studio Code
+安装 vscode-standardjs（已经包含了自动格式化）。
+
+安装 vscode-standardjs-snippets 以获得 JS snippets。安装 vscode-react-standard 以获得 React snippets。
+
+
+
+
+
+
+
+
