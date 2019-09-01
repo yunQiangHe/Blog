@@ -133,5 +133,51 @@ for (var i = 0; i < lis.length; i++) {
 js中"Maximum call stack size exceeded"解决方法
 错误直译过来就是“栈溢出”，出现这个错误的原因是因为我进行了递归运算，但是忘记添加判断条件，导致递归无线循环下去。。
 由于递归很容易发生“栈溢出”错误（stack overflow），所以必须要加退出条件 return。
-
 ```
+11. 浅拷贝 深拷贝
+```
+浅拷贝只是拷贝一层, 更深层次对象级别的只拷贝引用.
+深拷贝拷贝多层, 每一级别的数据都会拷贝.
+Object.assign(target, ...sources)    es6 新增方法可以浅拷贝
+分配assign
+for...in语句以任意顺序遍历一个对象的除Symbol以外的可枚举属性。继承的属性不显示
+   // 深拷贝拷贝多层, 每一级别的数据都会拷贝.
+        var obj = {
+            id: 1,
+            name: 'andy',
+            msg: {
+                age: 18
+            },
+            color: ['pink', 'red']
+        };
+        var o = {};
+        // 封装函数 
+        function deepCopy(newobj, oldobj) {
+            for (var k in oldobj) {
+                // 判断我们的属性值属于那种数据类型
+                // 1. 获取属性值  oldobj[k]
+                var item = oldobj[k];
+                // 2. 判断这个值是否是数组
+                if (item instanceof Array) {
+                    newobj[k] = [];
+                    deepCopy(newobj[k], item)
+                } else if (item instanceof Object) {
+                    // 3. 判断这个值是否是对象
+                    newobj[k] = {};
+                    deepCopy(newobj[k], item)
+                } else {
+                    // 4. 属于简单数据类型
+                    newobj[k] = item;
+                }
+
+            }
+        }
+        deepCopy(o, obj);
+        console.log(o);
+
+        var arr = [];
+        console.log(arr instanceof Object);
+        o.msg.age = 20;
+        console.log(obj);
+```
+
