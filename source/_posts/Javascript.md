@@ -21,6 +21,16 @@ for (var i = 0; i < 10; i++) {
     //     console.log(i);
     // },0)
 }
+
+var lis = document.querySelector('.nav').querySelectorAll('li');
+for (var i = 0; i < lis.length; i++) { //同步任务
+    lis[i].index = i;
+    lis[i].onclick = function() { //异步任务
+        // console.log(i);
+        console.log(this.index);
+
+    }
+}
 ```
 
 ```
@@ -76,4 +86,52 @@ JavaScript 严格模式（strict mode）即在严格的条件下运行。
 input {
     text-transform: uppercase;
 }
+```
+
+7. apply、call、bind区别、用法?
+```
+apply和call都是为了改变某个函数运行时的上下文而存在的（就是为了改变函数内部this的指向）
+
+```
+
+8.高阶函数 是对其他函数进行操作的函数，它接收函数作为参数或将函数作为返回值输出。
+
+9. 闭包
+```
+1. 闭包是什么？    
+    闭包是一个函数 （一个作用域可以访问另外一个函数的局部变量）
+2. 闭包的作用是什么？ 
+    延伸变量的作用范围
+
+// 闭包应用-点击li输出当前li的索引号
+// 1. 我们可以利用动态添加属性的方式
+var lis = document.querySelector('.nav').querySelectorAll('li');
+for (var i = 0; i < lis.length; i++) {
+    lis[i].index = i;
+    lis[i].onclick = function() {
+        // console.log(i);
+        console.log(this.index);
+
+    }
+}
+// 2. 利用闭包的方式得到当前小li 的索引号
+for (var i = 0; i < lis.length; i++) {
+    // 利用for循环创建了4个立即执行函数
+    // 立即执行函数也成为小闭包因为立即执行函数里面的任何一个函数都可以使用它的i这变量
+    (function(i) {
+        // console.log(i);
+        lis[i].onclick = function() {
+            console.log(i);
+
+        }
+    })(i);
+}
+```
+
+10. 递归
+```
+js中"Maximum call stack size exceeded"解决方法
+错误直译过来就是“栈溢出”，出现这个错误的原因是因为我进行了递归运算，但是忘记添加判断条件，导致递归无线循环下去。。
+由于递归很容易发生“栈溢出”错误（stack overflow），所以必须要加退出条件 return。
+
 ```
