@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>防抖</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 100%;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            color: #fff;
+            background-color: #444;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        频繁的事件触发
+        1.window的resize scroll
+        2.onmousemove mousedown
+        3.keyup keydown
+    </section>
+    <div id="container"></div>
+    <script>
+        // debounce.js
+
+        window.onload = function () {
+            let count = 1;
+            let container = document.getElementById("container");
+
+            function getUserAction(e) {
+                console.log(e);
+                console.log(this);
+                container.innerHTML = count++;
+                return "heyunqiang"
+            }
+
+            // container.onmousemove = getUserAction;
+            container.onmousemove = debounce(getUserAction, 1000, true);
+
+
+            // 防抖函数1.0  ==> getUserAction的this指向window
+            // function debounce(func, wait) {
+            //     let timeout;
+            //     return function () {
+            //         clearTimeout(timeout);
+            //         timeout = setTimeout(func, wait);
+            //     }
+            // }
+
+            // 防抖函数2.0 this指向
+            // function debounce(func, wait) {
+            //     let timeout;
+            //     return function () {
+            //         let context = this;
+            //         clearTimeout(timeout);
+            //         timeout = setTimeout(function(){
+            //             func.apply(context);
+            //         }, wait);
+            //     }
+            // }
+
+            // 防抖函数3.0 event 对象
+            // function debounce(func, wait) {
+            //     let timeout;
+            //     return function () {
+            //         let context = this;
+            //         let args = arguments;
+            //         clearTimeout(timeout);
+            //         timeout = setTimeout(function(){
+            //             func.apply(context, args);
+            //         }, wait);
+            //     }
+            // }
+
+            // 这个时候，代码已经很是完善了，但是为了让这个函数更加完善，我们接下来思考一个新的需求。
+            // 这个需求就是：
+            // 我不希望非要等到事件停止触发后才执行，我希望立刻执行函数，然后等到停止触发 n 秒后，才可以重新触发执行。
+            // 想想这个需求也是很有道理的嘛，那我们加个 immediate 参数判断是否是立刻执行。
+
+            // 防抖函数4.0 立刻执行
+            // function debounce(func, wait, immediate) {
+            //     let timeout;
+
+            //     return function () {
+            //         let context = this;
+            //         let args = arguments;
+
+            //         if (timeout) clearTimeout(timeout);
+
+            //         if (immediate) {
+            //             // 如果已经执行过，不再执行
+            //             let callNow = !timeout;
+            //             timeout = setTimeout(function () {
+            //                 timeout = null;
+            //             }, wait);
+            //             if (callNow) func.apply(context, args);
+            //         } else {
+            //             timeout = setTimeout(function () {
+            //                 func.apply(context, args);
+            //             }, wait);
+            //         }
+
+            //     }
+            // }
+
+            // 防抖函数5.0 返回值
+            // function debounce(func, wait, immediate) {
+            //     let timeout, result;
+            //     return function () {
+            //         let context = this;
+            //         let args = arguments;
+
+            //         if (timeout) clearTimeout(timeout);
+
+            //         if (immediate) {
+            //             // 如果已经执行过，不再执行
+            //             let callNow = !timeout;
+            //             timeout = setTimeout(function () {
+            //                 timeout = null;
+            //             }, wait);
+            //             if (callNow) result = func.apply(context, args);
+            //         } else {
+            //             timeout = setTimeout(function () {
+            //                 func.apply(context, args);
+            //             }, wait);
+            //         }
+            //         return result;
+
+            //     }
+            // }
+
+            // 最后我们再思考一个小需求，我希望能取消 debounce 函数，
+            // 比如说我 debounce 的时间间隔是 10 秒钟，immediate 为 true，这样的话，我只有等 10 秒后才能重新触发事件，
+            // 现在我希望有一个按钮，点击后，取消防抖，这样我再去触发，就可以又立刻执行啦，是不是很开心
+            function debounce(func, wait, immediate) {
+                let timeout, result;
+                return function () {
+                    let context = this;
+                    let args = arguments;
+
+                    if (timeout) clearTimeout(timeout);
+
+                    if (immediate) {
+                        // 如果已经执行过，不再执行
+                        let callNow = !timeout;
+                        timeout = setTimeout(function () {
+                            timeout = null;
+                        }, wait);
+                        if (callNow) result = func.apply(context, args);
+                    } else {
+                        timeout = setTimeout(function () {
+                            func.apply(context, args);
+                        }, wait);
+                    }
+                    return result;
+
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
